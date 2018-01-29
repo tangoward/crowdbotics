@@ -1,0 +1,16 @@
+
+{% extends 'pets/base.html' %}
+
+{% block content %}
+	
+
+	<form method="post">
+		{% csrf_token %}
+		{{form.as_p}}
+
+		<input type="submit" name="update" value="Update Info">
+	</form>
+
+	<a href="{% url 'dogs_cats:list_dog' %}">Back</a>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+
+{% extends 'pets/base.html'  %}
+
+
+{% block content %}
+
+	<h2> Update or Delete Pet Information for {{ cats.name }} </h2>
+	
+	<ul>
+		<li><h3>Name:  {{cats.name}}</h3></li>
+		<li><h3>Bday:  {{cats.bday}}</h3></li>
+	</ul>
+
+
+	<a href="{% url 'dogs_cats:update_cat' pk=cats.pk %}">Update This Info</a><br/ >
+	<a href="{% url 'dogs_cats:delete_cat' pk=cats.pk %}">Delete This Info</a><br />
+	<a href="{% url 'dogs_cats:list_cat' %}">Back</a>
+
+
+
+{% endblock %}

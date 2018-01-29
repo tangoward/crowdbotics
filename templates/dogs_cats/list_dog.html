@@ -1,0 +1,14 @@
+
+{% extends 'pets/base.html' %}
+
+{% block content %}
+	
+	<h2>Your Pets - Dog</h2>
+
+	<ul>
+		{% for dog in object_list %}
+			<li><a href="{{ dog.id }}">Name: {{ dog.name }}</a></li>
+		{% endfor %}
+	</ul>
+
+{% endblock %}

@@ -1,0 +1,19 @@
+
+{% extends 'dogs_cats/base.html' %}
+
+
+{% block content %}
+	
+	<h2>Add Dog Pet</h2>
+
+	<form method="POST">
+		{% csrf_token %}
+
+		{{ form.as_p }}
+
+		<input type="submit" value="Add Pet Dog">
+	</form>
+
+	<a href="{% url 'dogs_cats:profile' %}">back</a>
+
+{% endblock %}

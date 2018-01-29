@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Crowdbotics - Pets</title>
+</head>
+<body>
+
+	<h2>Crowdbotics - Pets</h2>
+
+	<ul>
+	{% if user.is_authenticated %}
+		<li><a href="{% url 'dogs_cats:logout' %}">Logout</a></li>
+		<li><a href="{% url 'dogs_cats:create_dog' %}">Add Pet - Dog</li>
+		<li><a href="{% url 'dogs_cats:create_cat' %}">Add Pet - Cat</a></li>
+		<li><a href="{% url 'dogs_cats:list_dog' %}">View My Pets - Dog</a></li>
+		<li><a href="{% url 'dogs_cats:list_cat' %}">View My Pets - Cat</a></li>
+		<li><a href="/dogs_cats/api">Access My Pets' API</a></li>
+
+	{% else %}
+		<li><a href="{% url 'dogs_cats:signup' %}">SignUp</a></li>
+		<li><a href="{% url 'dogs_cats:login' %}">Login</a></li>
+
+	{% endif %}
+	</ul>
+	
+
+
+	{% block content %}
+
+
+	{% endblock %}
+
+</body>
+</html>

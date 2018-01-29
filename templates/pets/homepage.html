@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Crowdbotics - Exam</title>
+</head>
+<body>
+
+	<h1>Crowdbotics - Pets</h1>
+
+	{% if user.is_authenticated %}
+		<a href="{% url 'dogs_cats:profile' %}">Access Your Profile</a>
+	{% else %}
+		<a href="{% url 'dogs_cats:signup' %}">Process To SignUp</a>
+	{% endif %}
+	
+
+</body>
+</html>
+
+

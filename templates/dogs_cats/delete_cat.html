@@ -1,0 +1,17 @@
+{% extends 'pets/base.html' %}
+
+{% block content %}
+	
+	<h3>Are you sure? All information will be deleted.</h3>
+
+
+	<form method="post">
+		{% csrf_token %}
+		
+
+		<input type="submit" name="update" value="Yes, Delete This Info">
+	</form>
+
+	<a href="{% url 'dogs_cats:list_cat' %}">Back</a>
+
+{% endblock %}
