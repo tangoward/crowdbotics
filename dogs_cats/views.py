@@ -31,6 +31,7 @@ class CreateDog(CreateView):
     model = Dog
     fields = ('name', 'bday')
 
+    # Assign the newly created dog to the current logged in user
     def form_valid(self, form):
         form.instance.owner = self.request.user
         return super(CreateDog, self).form_valid(form)
@@ -41,6 +42,7 @@ class CreateCat(CreateView):
     model = Cat
     fields = ('name', 'bday')
 
+     # Assign the newly created cat to the current logged in user
     def form_valid(self, form):
         form.instance.owner = self.request.user
         return super(CreateCat, self).form_valid(form)
@@ -51,6 +53,7 @@ class ListDog(ListView):
     model = Dog
     queryset = Dog.objects.all()
 
+    #List pet dogs under the current logged in user
     def get_queryset(self):
         return self.queryset.filter(owner=self.request.user)
 
@@ -66,6 +69,7 @@ class ListCat(ListView):
     model = Cat
     queryset = Cat.objects.all()
 
+    #List pet cats under the current logged in user
     def get_queryset(self):
         return self.queryset.filter(owner=self.request.user)
 
